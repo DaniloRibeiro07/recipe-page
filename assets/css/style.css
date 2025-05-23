@@ -21,7 +21,7 @@ main {
   display: flex;
   flex-flow: column;
   background-color: white;
-  width: 800px;
+  width: min(800px, 100vw);
   padding: 40px;
   border-radius: 20px;
   margin-top: 100px;
@@ -58,7 +58,7 @@ h3 {
 }
 
 p {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 ul,
@@ -86,7 +86,11 @@ table {
 }
 
 td {
-  padding: 10px 215px 10px 30px;
+  padding: 10px 0 10px 30px;
+}
+
+td:first-child {
+  width: 48%;
 }
 
 section {
@@ -111,4 +115,15 @@ tr:not(:last-child) {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 800px) {
+  main {
+    margin-top: 0px;
+    padding: 0;
+  }
+
+  img {
+    border-radius: 0;
+  }
 }
