@@ -29,6 +29,12 @@ main {
   color: hsl(30, 10%, 34%);
 }
 
+#text-content {
+  display: flex;
+  flex-flow: column;
+  gap: 30px;
+}
+
 img {
   border-radius: 20px;
 }
@@ -61,19 +67,31 @@ p {
   font-size: 18px;
 }
 
-ul,
 ol {
-  list-style-position: inside;
-  margin-left: 5px;
+  margin-left: 25px;
 }
 
-ul li::marker,
+ol li {
+  padding-left: 10px;
+}
+
 ol li::marker {
   color: hsl(14, 45%, 36%);
   font-weight: 600;
 }
 
-article ul li::marker {
+ul li {
+  display: flex;
+}
+
+ul li::before {
+  content: "•";
+  margin: 0 20px 0 10px;
+  color: hsl(14, 45%, 36%);
+  align-self: center;
+}
+
+article ul li::before{
   color: hsl(332, 51%, 32%);
 }
 
@@ -121,6 +139,11 @@ tr:not(:last-child) {
   main {
     margin-top: 0px;
     padding: 0;
+    border-radius: 0;
+  }
+
+  #text-content {
+    padding: 0 30px;
   }
 
   img {
